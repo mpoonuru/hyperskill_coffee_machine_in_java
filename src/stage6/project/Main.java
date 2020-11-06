@@ -1,4 +1,4 @@
-package stage6.project;
+package machine;
 
 import java.util.Scanner;
 
@@ -12,10 +12,10 @@ enum State {
     BUY_CHOICE
 }
 
-public class Main {
+public class CoffeeMachine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        CoffeeMachine coffeeMachine = new CoffeeMachine(400, 540, 120, 9, 550);
+        CoffeeMachines coffeeMachine = new CoffeeMachines(400, 540, 120, 9, 550);
         coffeeMachine.start();
 
         while (coffeeMachine.getState() != State.SHUTDOWN) {
@@ -24,7 +24,7 @@ public class Main {
     }
 }
 
-class CoffeeMachine {
+class CoffeeMachines {
 
     private int water;
     private int milk;
@@ -34,7 +34,7 @@ class CoffeeMachine {
     private String input;
     private State state = State.READY;
 
-    CoffeeMachine(int water, int milk, int beans, int cups, int money) {
+    CoffeeMachines(int water, int milk, int beans, int cups, int money) {
         this.water = water;
         this.milk = milk;
         this.beans = beans;
